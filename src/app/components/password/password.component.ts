@@ -56,7 +56,10 @@ export class PasswordComponent implements OnInit {
     if (isLengthValid && hasLetter && hasNumber && hasSymbols) {
       return { max: true };
     }
-    if (isLengthValid && hasLetter && hasNumber) {
+    if (
+      (isLengthValid && hasLetter && hasNumber) ||
+      (isLengthValid && hasLetter && hasSymbols)
+    ) {
       return { normal: true };
     }
     if ((isLengthValid && hasLetter) || (isLengthValid && hasNumber)) {
